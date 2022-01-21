@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('message/index', 'MessageController@index');
-Route::get('message/send', 'MessageController@send');
+Route::get('message/index', [Controllers\MessageController::class, 'index']);
+Route::get('message/send', [Controllers\MessageController::class, 'send']);
+Route::get('/t', function () {
+
+    event(new \App\Events\SendMessage());
+
+    dd('Event Run Successfully.');
+
+});
 
 Route::get('/', function () {
     return view('welcome');
