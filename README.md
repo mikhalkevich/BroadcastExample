@@ -16,7 +16,8 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - composer install
 - npm i
 - npm i -g laravel-echo-server
-- настроить redis
+- установить и настроить redis
+- создать файл .env на примере env.example
 - php artisan server
 - laravel-echo-server start
 
