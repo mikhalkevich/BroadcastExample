@@ -15,11 +15,8 @@ use App\Http\Controllers;
 Route::get('message/index', [Controllers\MessageController::class, 'index']);
 Route::get('message/send', [Controllers\MessageController::class, 'send']);
 Route::get('/t', function () {
-
     event(new \App\Events\SendMessage());
-
     dd('Event Run Successfully.');
-
 });
 
 Route::get('/', function () {
